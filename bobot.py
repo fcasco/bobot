@@ -6,6 +6,11 @@ import random
 import bottle
 
 
+@bottle.route('/')
+def index():
+    return 'Bobot'
+
+
 @bottle.route('/areyouok')
 def areyouok():
     return 'I am ok'
