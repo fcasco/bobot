@@ -1,7 +1,7 @@
 {
     "name": "Bobot",
     "engines": {
-        "python": "2.7.10"
+        "python": "3.4.3"
     },
     "scripts": {
         "start": "gunicorn -b unix:/mnt/home/app.sock bobot:bobot_app"
