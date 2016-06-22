@@ -17,8 +17,20 @@ def areyouok():
 
 
 @bottle.route('/dice')
-def talk():
+def dice():
     return str(random.randint(1, 6))
+
+
+@bottle.route('/fb/webhook')
+def fb_webhook():
+    verify_token = bottle.request.query.get('hub.verify_token', None)
+    my_token = os.environ.get('BOBOT_TOKEN', random.random())
+    if verify_token == my_token:
+        response = bottle.request.query.get('hub.challenge')
+    else:
+        response = 'That\'s not my token!'
+
+    return response
 
 
 bobot_app = bottle.default_app()
