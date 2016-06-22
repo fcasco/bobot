@@ -33,6 +33,12 @@ def fb_webhook():
     return response
 
 
+@bottle.post('/fb/webhook')
+def fb_webhook_post():
+    print(bottle.request.json)
+    return '(0.o)'
+
+
 bobot_app = bottle.default_app()
 
 
