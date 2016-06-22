@@ -1,5 +1,7 @@
 """Bobot
 """
+import os
+
 import bottle
 
 
@@ -9,4 +11,4 @@ def areyouok():
 
 
 if __name__ == '__main__':
-    bottle.run(host='localhost', port=64246)
+    bottle.run(host='localhost', port=os.environ.get('PORT', 64246))
