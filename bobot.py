@@ -1,6 +1,7 @@
 """Bobot
 """
 import os
+import random
 
 import bottle
 
@@ -8,6 +9,11 @@ import bottle
 @bottle.route('/areyouok')
 def areyouok():
     return 'I am ok'
+
+
+@bottle.route('/dice')
+def talk():
+    return str(random.randint(1, 6))
 
 
 bobot_app = bottle.default_app()
